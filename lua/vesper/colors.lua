@@ -50,6 +50,7 @@ M.default = {
   warn = hsl(20, 100, 80),
   info = hsl(165, 100, 80),
   hint = hsl(210, 9, 44),
+  todo = hsl(30, 100, 83),
 }
 
 ---@return ColorScheme
@@ -88,12 +89,6 @@ function M.setup(opts)
     or colors.bg
 
   colors.fg_float = colors.fg
-
-  colors.error = colors.red
-  colors.warning = colors.yellow
-  colors.info = colors.blue
-  colors.hint = colors.cyan
-  colors.todo = colors.blue
 
   config.options.on_colors(colors)
   if opts.transform and config.is_day() then
