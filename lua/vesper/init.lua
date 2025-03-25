@@ -1,4 +1,3 @@
-local util = require("vesper.util")
 local theme = require("vesper.theme")
 local config = require("vesper.config")
 
@@ -20,7 +19,7 @@ function M.load(opts)
   if opts then
     require("vesper.config").extend(opts)
   end
-  util.load(theme.setup())
+  theme.setup()
 end
 
 M.setup = config.setup
