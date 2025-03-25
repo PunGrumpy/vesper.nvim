@@ -133,3 +133,4 @@ function M.setup(colors, opts)
 end
 
 return M
+
