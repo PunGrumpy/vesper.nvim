@@ -1,1 +1,1 @@
-require("vesper").colorscheme()
+require("vesper")._load()

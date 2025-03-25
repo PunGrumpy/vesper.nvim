@@ -1,51 +1,59 @@
-local config = require("vesper.config")
-local mix = require("vesper.utils").mix
+local util = require("vesper.util")
+local hslutil = require("vesper.hsl")
+local hsl = hslutil.hslToHex
 
-local colors = {
+local M = {}
+
+local function mix(color1, color2, amount)
+	return util.mix(color1, color2, amount)
+end
+
+---@class Palette
+M.default = {
 	-- background colors
-	white = "#FFFFFF",
-	black = "#343434",
-	bg = "#101010",
-	bgDark = "#161616",
-	bgDarker = "#232323",
-	bgFloat = "#282828",
-	bgOption = "#343434",
+	white = hsl(0, 0, 100),
+	black = hsl(0, 0, 20),
+	bg = hsl(0, 0, 6),
+	bgDark = hsl(0, 0, 9),
+	bgDarker = hsl(0, 0, 14),
+	bgFloat = hsl(0, 0, 16),
+	bgOption = hsl(0, 0, 20),
 
-	fg = mix("#FFFFFF", "#000000", math.abs(0.80)),
-	fgAlt = "#FEFEFE",
-	fgCommand = "#FEFEFE",
-	fgInactive = "#65737E",
-	fgDisabled = "#505050",
-	fgLineNr = "#505050",
-	fgSelection = "#343434",
-	fgSelectionInactive = "#505050",
+	fg = mix(hsl(0, 0, 100), "#000000", math.abs(0.80)),
+	fgAlt = hsl(0, 0, 99),
+	fgCommand = hsl(0, 0, 99),
+	fgInactive = hsl(210, 9, 44),
+	fgDisabled = hsl(0, 0, 31),
+	fgLineNr = hsl(0, 0, 31),
+	fgSelection = hsl(0, 0, 20),
+	fgSelectionInactive = hsl(0, 0, 31),
 
 	-- border colors
-	border = "#505050",
-	borderFocus = "#65737E",
-	borderDarker = "#A0A0A0",
+	border = hsl(0, 0, 31),
+	borderFocus = hsl(210, 9, 44),
+	borderDarker = hsl(0, 0, 63),
 
 	-- ui colors
-	greenLight = mix("#99FFE4", "#000000", math.abs(0.85)),
-	red = "#FF8080",
-	purple = "#FFCFA8",
-	redDark = "#FF8080",
-	orange = "#FFCFA8",
-	primary = "#A0A0A0",
-	comment = mix("#8b8b8b", "#000000", math.abs(0.90)),
-	orangeLight = "#FFCFA8",
-	green = mix("#99FFE4", "#000000", math.abs(0.85)),
-	yellowDark = "#FFC799",
-	purpleDark = mix("#65737E", "#000000", math.abs(0.80)),
-	symbol = "#65737E",
-	secondary = "#FFFFFF",
-	terminalbrightblack = "#343434",
+	greenLight = mix(hsl(165, 100, 80), "#000000", math.abs(0.85)),
+	red = hsl(0, 100, 75),
+	purple = hsl(30, 100, 83),
+	redDark = hsl(0, 100, 75),
+	orange = hsl(30, 100, 83),
+	primary = hsl(0, 0, 63),
+	comment = mix(hsl(0, 0, 55), "#000000", math.abs(0.90)),
+	orangeLight = hsl(30, 100, 83),
+	green = mix(hsl(165, 100, 80), "#000000", math.abs(0.85)),
+	yellowDark = hsl(20, 100, 80),
+	purpleDark = mix(hsl(210, 9, 44), "#000000", math.abs(0.80)),
+	symbol = hsl(210, 9, 44),
+	secondary = hsl(0, 0, 100),
+	terminalbrightblack = hsl(0, 0, 20),
 
 	-- diagnostic colors
-	error = "#FF8080",
-	warn = "#FFC799",
-	info = "#99FFE4",
-	hint = "#65737E",
+	error = hsl(0, 100, 75),
+	warn = hsl(20, 100, 80),
+	info = hsl(165, 100, 80),
+	hint = hsl(210, 9, 44),
 }
 
-return colors
+return M

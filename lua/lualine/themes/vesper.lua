@@ -1,44 +1,45 @@
-local colors = require("vesper.colors")
-local config = require("vesper.config")
-local theme = {}
+local colors = require("vesper.colors").setup({ transform = true })
+local config = require("vesper.config").options
+local util = require("vesper.util")
 
-local bg = config.transparent and "NONE" or colors.bg
+local vesper = {}
 
-theme.normal = {
-	a = { bg = colors.orange, fg = colors.bg, gui = "bold" },
-	b = { bg = bg, fg = colors.primary },
-	c = { bg = bg, fg = colors.primary },
+vesper.normal = {
+  a = { bg = colors.blue, fg = colors.black },
+  b = { bg = colors.bg_statusline, fg = colors.fg },
+  c = { bg = colors.bg_statusline, fg = colors.fg },
 }
 
-theme.insert = {
-	a = { bg = colors.red, fg = colors.bg, gui = "bold" },
-	b = { bg = bg, fg = colors.comment },
+vesper.insert = {
+  a = { bg = colors.green, fg = colors.black },
 }
 
-theme.terminal = {
-	a = { bg = colors.greenLight, fg = colors.bg, gui = "bold" },
-	b = { bg = bg, fg = colors.comment },
+vesper.command = {
+  a = { bg = colors.yellow, fg = colors.black },
 }
 
-theme.command = {
-	a = { bg = colors.greenLight, fg = colors.bg, gui = "bold" },
-	b = { bg = bg, fg = colors.comment },
+vesper.visual = {
+  a = { bg = colors.magenta, fg = colors.black },
 }
 
-theme.visual = {
-	a = { bg = colors.green, fg = colors.bg, gui = "bold" },
-	b = { bg = bg, fg = colors.comment },
+vesper.replace = {
+  a = { bg = colors.red, fg = colors.black },
 }
 
-theme.replace = {
-	a = { bg = colors.orange, fg = colors.bg, gui = "bold" },
-	b = { bg = bg, fg = colors.comment },
+vesper.terminal = {
+  a = { bg = colors.green, fg = colors.black },
 }
 
-theme.inactive = {
-	a = { bg = colors.comment, fg = colors.bg },
-	b = { bg = bg, fg = colors.orange, gui = "bold" },
-	c = { bg = bg, fg = colors.orange },
+vesper.inactive = {
+  a = { bg = colors.bg_statusline, fg = colors.blue },
+  b = { bg = colors.bg_statusline, fg = colors.fg, gui = "bold" },
+  c = { bg = colors.bg_statusline, fg = colors.fg },
 }
 
-return theme
+if config.lualine_bold then
+  for _, mode in pairs(vesper) do
+    mode.a.gui = "bold"
+  end
+end
+
+return vesper
