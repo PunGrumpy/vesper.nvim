@@ -8,7 +8,7 @@ function M.setup()
   local groups = require("vesper.groups").setup(colors, opts.options)
 
   if vim.g.loaded_lightline then
-    vim.g.lightline = { colorscheme = "solarized_osaka" }
+    vim.g.lightline = { colorscheme = "vesper" }
   end
 
   if vim.g.colors_name then
