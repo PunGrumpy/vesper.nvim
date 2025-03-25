@@ -1,5 +1,5 @@
-local util = require("dullahan.util")
-local colors = require("dullahan.colors")
+local util = require("vesper.util")
+local colors = require("vesper.colors")
 
 local M = {}
 --
@@ -13,7 +13,7 @@ local M = {}
 
 ---@return Theme
 function M.setup()
-  local config = require("dullahan.config")
+  local config = require("vesper.config")
   local options = config.options
   ---@class Theme
   ---@field highlights Highlights
