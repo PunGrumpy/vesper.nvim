@@ -6,6 +6,8 @@ local M = {}
 
 ---@class Palette
 M.default = {
+  none = "NONE",
+  
   -- background colors
   white = hsl(0, 0, 100),
   black = hsl(0, 0, 20),
