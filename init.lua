@@ -166,7 +166,7 @@ end, opts)
 local theme = require("vesper/init")
 
 theme.setup({
-	transparent = false,
+	transparent = true,
 	italics = {
 		comments = false,
 		keywords = true,
