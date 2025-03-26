@@ -21,4 +21,3 @@ function M.get(c, opts)
 end
 
 return M
-
