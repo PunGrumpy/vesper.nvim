@@ -3,11 +3,11 @@ local M = {}
 function M.get(c, opts)
   -- stylua: ignore
   return {
-    illuminatedWord      = { bg = c.bgDarker },
-    illuminatedCurWord   = { bg = c.bgDarker },
-    IlluminatedWordText  = { bg = c.bgDarker },
-    IlluminatedWordRead  = { bg = c.bgDarker },
-    IlluminatedWordWrite = { bg = c.bgDarker },
+    illuminatedWord      = { fg = c.fg, bg = c.bgDarker },
+    illuminatedCurWord   = { fg = c.fgAlt, bg = c.bgDarker },
+    IlluminatedWordText  = { fg = c.fg, bg = c.bgDarker },
+    IlluminatedWordRead  = { fg = c.primary, bg = c.bgDarker },
+    IlluminatedWordWrite = { fg = c.purple, bg = c.bgDarker },
   }
 end
 

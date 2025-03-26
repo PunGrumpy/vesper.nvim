@@ -5,11 +5,11 @@ function M.get(c, opts)
   return {
     RainbowDelimiterRed    = { fg = c.red },
     RainbowDelimiterOrange = { fg = c.orange },
-    RainbowDelimiterYellow = { fg = c.orange },
+    RainbowDelimiterYellow = { fg = c.yellow },
     RainbowDelimiterGreen  = { fg = c.green },
-    RainbowDelimiterBlue   = { fg = c.primary },
+    RainbowDelimiterBlue   = { fg = c.blue },
     RainbowDelimiterViolet = { fg = c.purple },
-    RainbowDelimiterCyan   = { fg = c.primary },
+    RainbowDelimiterCyan   = { fg = c.cyan },
   }
 end
 
