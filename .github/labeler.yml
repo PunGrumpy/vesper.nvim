@@ -1,0 +1,27 @@
+core:
+  - changed-files:
+      - any-glob-to-any-file: 'lua/vesper/**'
+      - all-globs-to-all-files:
+          - '!lua/vesper/groups/**'
+          - '!lua/vesper/colors/**'
+          - '!lua/vesper/extra/**'
+
+extras:
+  - changed-files:
+      - any-glob-to-any-file: 'lua/vesper/extra/**'
+
+groups:
+  - changed-files:
+      - any-glob-to-any-file: 'lua/vesper/groups/**'
+
+base:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'lua/vesper/groups/base.lua'
+          - 'lua/vesper/groups/kinds.lua'
+          - 'lua/vesper/groups/treesitter.lua'
+          - 'lua/vesper/groups/semantic_tokens.lua'
+
+colors:
+  - changed-files:
+      - any-glob-to-any-file: 'lua/vesper/colors/**'
