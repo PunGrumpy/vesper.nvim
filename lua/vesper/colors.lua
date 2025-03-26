@@ -19,6 +19,7 @@ M.default = {
   fgAlt = hsl(0, 0, 99),
   fgCommand = hsl(0, 0, 99),
   fgInactive = hsl(210, 9, 44),
+  fgActive = hsl(0, 0, 41),
   fgDisabled = hsl(0, 0, 31),
   fgLineNr = hsl(0, 0, 31),
   fgSelection = hsl(0, 0, 20),

@@ -12,7 +12,7 @@ function M.get(c, opts)
     SnacksNotifierBorderTrace = { fg = c.purple },
     SnacksNotifierIconTrace   = { fg = c.purple },
     SnacksNotifierTitleTrace  = { fg = c.purple },
-    SnacksIndentScope         = { fg = c.fgAlt, nocombine = true },
+    SnacksIndentScope         = { fg = c.fgActive, nocombine = true },
     SnacksIndent              = { fg = c.fgDisabled, nocombine = true },
     SnacksPickerBorder        = { fg = c.border, bg = c.bg_float },
     SnacksPickerTitle         = "Title",
