@@ -67,7 +67,7 @@ function M.get(c, opts)
 
     -- Punctuation
     ["@punctuation.delimiter"]        = { fg = c.green }, -- For delimiters ie: `.`
-    ["@punctuation.bracket"]          = { fg = c.fgAlt }, -- For brackets and parens.
+    ["@punctuation.bracket"]          = { fg = c.orange }, -- For brackets and parens.
     ["@punctuation.special"]          = { fg = c.orange }, -- For special punctutation that does not fall in the catagories before.
     ["@punctuation.special.markdown"] = { fg = c.orange, bold = true },
     ["@markup.list"]                  = { fg = c.primary }, -- For special punctutation that does not fall in the catagories before.
