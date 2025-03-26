@@ -167,6 +167,11 @@ local theme = require("vesper/init")
 
 theme.setup({
   transparent = true,
+  use_background = true,
+  styles = {
+    sidebars = "transparent",
+    floats = "transparent",
+  },
   italics = {
     comments = false,
     keywords = true,
