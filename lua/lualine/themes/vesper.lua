@@ -5,7 +5,7 @@ local util = require("vesper.util")
 local vesper = {}
 
 vesper.normal = {
-  a = { bg = colors.blue, fg = colors.black },
+  a = { bg = colors.primary, fg = colors.white },
   b = { bg = colors.bg_statusline, fg = colors.fg },
   c = { bg = colors.bg_statusline, fg = colors.fg },
 }
@@ -15,11 +15,11 @@ vesper.insert = {
 }
 
 vesper.command = {
-  a = { bg = colors.yellow, fg = colors.black },
+  a = { bg = colors.orange, fg = colors.black },
 }
 
 vesper.visual = {
-  a = { bg = colors.magenta, fg = colors.black },
+  a = { bg = colors.purple, fg = colors.black },
 }
 
 vesper.replace = {
@@ -27,12 +27,12 @@ vesper.replace = {
 }
 
 vesper.terminal = {
-  a = { bg = colors.green, fg = colors.black },
+  a = { bg = colors.greenLight, fg = colors.black },
 }
 
 vesper.inactive = {
-  a = { bg = colors.bg_statusline, fg = colors.blue },
-  b = { bg = colors.bg_statusline, fg = colors.fg, gui = "bold" },
+  a = { bg = colors.bg_statusline, fg = colors.fgInactive },
+  b = { bg = colors.bg_statusline, fg = colors.fg },
   c = { bg = colors.bg_statusline, fg = colors.fg },
 }
 
