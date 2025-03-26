@@ -1,72 +1,91 @@
-<div align="center">
+# 🍸 Vesper
 
-# Vesper
-
-Port of the VS Code theme, [Vesper](https://github.com/raunofreiberg/vesper)
-
-<br/>
-<br/>
+Port of the VS Code theme, [Vesper](https://github.com/raunofreiberg/vesper) for Neovim - written in Lua. The theme is designed to be easy on the eyes and focuses on the code.
 
 ![preview](./assets/preview.png)
 
-<br/>
-<br/>
+## ✨ Features
 
-</div>
+- Supports the latest [Neovim](https://github.com/neovim/neovim) [0.9.0](https://github.com/neovim/neovim/releases/tag/v0.9.0) features.
+- Enhances terminal colors.
+- Introduces a darker background option for sidebar-like windows.
+- Supports all major plugins.
 
-## Installation
+## 📦 Requirements
 
-1. Using `Lazy`:
+- [Neovim](https://github.com/neovim/neovim) >= 0.7.2
+
+## ⚡️ Installation
+
+Install the theme with your preferred package manager, I recommended [folke/lazy.nvim](https://github.com/folke/lazy.nvim):
 
 ```lua
-{ 'datsfilipe/vesper.nvim' },
+{
+    "PunGrumpy/vesper.nvim",
+    lazy = true,
+    priority = 1000,
+    opt = {}
+}
 ```
 
-2. Using `Packer`:
+## 🚀 Usage
 
-```lua
-use 'datsfilipe/vesper.nvim'
+### Vim Script
+
+```vim
+colorscheme vesper
 ```
 
-## Configuration
-
-To configure the plugin, you can call require('vesper').setup({}), passing the table with the values in it. The following are the **defaults**:
+### Lua
 
 ```lua
-require('vesper').setup({
-    transparent = false, -- Boolean: Sets the background to transparent
-    italics = {
-        comments = true, -- Boolean: Italicizes comments
-        keywords = true, -- Boolean: Italicizes keywords
-        functions = true, -- Boolean: Italicizes functions
-        strings = true, -- Boolean: Italicizes strings
-        variables = true, -- Boolean: Italicizes variables
-    },
-    overrides = {}, -- A dictionary of group names, can be a function returning a dictionary or a table.
-    palette_overrides = {}
+vim.cmd[[colorscheme vesper]]
+```
+
+## ⚙️ Configuration
+
+[Vesper](https://github.com/PunGrumpy/vesper.nvim) uses the default options, unless `setup` is called.
+
+```lua
+require("vesper").setup({
+  -- your configuration comes here
+  -- or leave it empty to use the default settings
+  transparent = true, -- Enable this to disable setting the background color
+  terminal_colors = true, -- Configure the colors used when opening a `:terminal` in [Neovim](https://github.com/neovim/neovim)
+  styles = {
+    -- Style to be applied to different syntax groups
+    -- Value is any valid attr-list value for `:help nvim_set_hl`
+    comments = { italic = true },
+    keywords = { italic = true },
+    functions = {},
+    variables = {},
+    -- Background styles. Can be "dark", "transparent" or "normal"
+    sidebars = "dark", -- style for sidebars, see below
+    floats = "dark", -- style for floating windows
+  },
+  sidebars = { "qf", "help" }, -- Set a darker background on sidebar-like windows. For example: `["qf", "vista_kind", "terminal", "packer"]`
+  day_brightness = 0.3, -- Adjusts the brightness of the colors of the **Day** style. Number between 0 and 1, from dull to vibrant colors
+  hide_inactive_statusline = false, -- Enabling this option, will hide inactive statuslines and replace them with a thin border instead. Should work with the standard **StatusLine** and **LuaLine**.
+  dim_inactive = false, -- dims inactive windows
+  lualine_bold = false, -- When `true`, section headers in the lualine theme will be bold
+
+  --- You can override specific color groups to use other groups or a hex color
+  --- function will be called with a ColorScheme table
+  ---@param colors ColorScheme
+  on_colors = function(colors) end,
+
+  --- You can override specific highlights to use other groups or a hex color
+  --- function will be called with a Highlights and ColorScheme table
+  ---@param highlights Highlights
+  ---@param colors ColorScheme
+  on_highlights = function(highlights, colors) end,
 })
 ```
 
-- **The `colorscheme()` function**
-
-This function can be used to set the colorscheme in your editor, however, if it doesn't work for you, you can always use `vim.cmd.colorscheme('vesper')`.
-
-### Specifics for Some Plugins
-
-#### Bufferline.nvim
-
-To use the theme with [bufferline.nvim](https://github.com/akinsho/bufferline.nvim), you can use the following configuration:
-
-```lua
-require('bufferline').setup({
-    highlights = require('vesper').bufferline.highlights,
-})
-```
-
-## Contributing
+## 🆘 Contributing
 
 Contributions are welcome, please open an issue if you encounter any bug or if you find any improvements are needed for the code, also feel free to open a PR.
 
-## License
+## 📝 License
 
-[MIT License](LICENSE)
+[MIT License](LICENSE) for more information.
