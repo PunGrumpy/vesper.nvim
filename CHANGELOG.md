@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.1.0](https://github.com/PunGrumpy/vesper.nvim/compare/v1.0.0...v1.1.0) (2025-03-26)
+
+
+### Features
+
+* **colors:** add 'none' color to the default palette ([790196e](https://github.com/PunGrumpy/vesper.nvim/commit/790196e2a0e2ea7cc837b64e0c36c6a9be8fedcb))
+* **theme:** enhance theme configuration with background and styles ([d754aaf](https://github.com/PunGrumpy/vesper.nvim/commit/d754aaf826fbcb9a8fbd4c05958108ba3be07d8d))
+
+
+### Bug Fixes
+
+* **colors:** update background colors for popups, statusline, sidebar, and floats ([d82061b](https://github.com/PunGrumpy/vesper.nvim/commit/d82061bc989a5aae37958a8a0448a03b9b7500f8))
+* **colors:** update BufferAlternate colors to use secondary shades ([0bb41e5](https://github.com/PunGrumpy/vesper.nvim/commit/0bb41e5816632aac96e612f73b51ff3353219315))
+
 ## 1.0.0 (2025-03-26)
 
 
